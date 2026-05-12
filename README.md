@@ -1,14 +1,14 @@
-# 🏠 InmoSmart - Sistema Web para Gestión Inmobiliaria
+InmoSmart - Sistema Web para Gestión Inmobiliaria
 
-## 📌 Descripción
+Descripción
 
 InmoSmart es una aplicación web desarrollada para optimizar la gestión de propiedades inmobiliarias y mejorar la experiencia de los usuarios que buscan alquilar o comprar inmuebles.
 
 El sistema permite visualizar propiedades, aplicar filtros avanzados, postularse a inmuebles, adjuntar documentación requerida, coordinar visitas y gestionar el proceso completo desde la consulta hasta la entrega del inmueble.
 
----
 
-## 🎯 Objetivo
+
+Objetivo
 
 Digitalizar y automatizar el proceso inmobiliario, facilitando:
 
@@ -16,11 +16,11 @@ Digitalizar y automatizar el proceso inmobiliario, facilitando:
 - La gestión centralizada de propiedades para la inmobiliaria
 - La automatización de postulaciones, aprobaciones y visitas
 
----
 
-## 🚀 Funcionalidades Principales
 
-### 🔍 Búsqueda de inmuebles
+Funcionalidades Principales
+
+Búsqueda de inmuebles
 
 - Filtros por:
   - Tipo de operación (alquiler / venta)
@@ -32,7 +32,7 @@ Digitalizar y automatizar el proceso inmobiliario, facilitando:
   - Descripción detallada
   - Precio y ubicación
 
-### 🧾 Postulación a inmuebles
+Postulación a inmuebles
 
 - Visualización de requisitos y garantías
 - Envío de solicitud
@@ -43,20 +43,20 @@ Digitalizar y automatizar el proceso inmobiliario, facilitando:
   - Aprobado
   - Rechazado
 
-### 📅 Gestión de visitas
+ Gestión de visitas
 
 - Selección de horarios disponibles
 - Reserva de turnos
 - Confirmación de visitas
 
-### 🔔 Notificaciones
+Notificaciones
 
 - Confirmación de postulación
 - Estado de aprobación
 - Avisos de visitas
 - Notificación final para firma y entrega de llave
 
-### 🛠 Panel administrativo
+Panel administrativo
 
 - Alta, edición y eliminación de inmuebles
 - Gestión de solicitudes
@@ -64,20 +64,30 @@ Digitalizar y automatizar el proceso inmobiliario, facilitando:
 - Administración de horarios de visitas
 - Visualización de documentación
 
----
 
-## 📋 Especificación de Requerimientos
 
-### 🔹 Requerimientos Funcionales (RF)
+Especificación de Requerimientos
+
+Requerimientos Funcionales (RF)
 
 **RF1 - Búsqueda de inmuebles:**  
-El sistema debe permitir a los usuarios buscar inmuebles mediante filtros como tipo de operación, tipo de inmueble y características.
+El sistema debe permitir a los usuarios buscar inmuebles mediante filtros como tipo de operación (Venta / alquiler), tipo de inmueble y características específicas (cantidad de habitaciones, ubicación y rango de precio).
+Actor: Usuario
+Prioridad: Must
+Criterio de verificación: El sistema debe mostrar únicamente los inmuebles que coincidan con los filtros seleccionados por el usuario y actualizar los resultados en menos de 3 segundos bajo las condiciones normales de uso.
+
 
 **RF2 - Visualización de propiedades:**  
-El sistema debe permitir visualizar el detalle completo de un inmueble, incluyendo imágenes, descripción, precio y ubicación.
+El sistema debe permitir al usuario visualizar la información detallada de un inmueble seleccionando, incluyendo galería de imágenes, descripción, precio, requisitos y ubicación geográfica mediante un mapa interactivo.
+Actor: Usuario
+Prioridad: Must
+Criterio de aceptación: El sistema debe mostrar correctamente toda la información asociada al inmueble seleccionado sin omitir campos obligatorios ni presentar errores de carga.
 
 **RF3 - Postulación a inmuebles:**  
-El sistema debe permitir a los usuarios postularse a un inmueble y adjuntar la documentación requerida.
+El sistema debe permitir al usuario confirmar su postulación para adquirir o alquilar  un inmueble y adjuntar la documentación requerida para su evaluación. 
+Actor: Usuario
+Prioridad: Must
+Criterio de aceptación: El sistema debe almacenar correctamente la  confirmación de postulación, los archivos adjuntos asociados al usuario y al inmueble seleccionado.
 
 **RF4 - Gestión de visitas:**  
 El sistema debe permitir a los usuarios agendar visitas seleccionando horarios disponibles.
@@ -85,22 +95,27 @@ El sistema debe permitir a los usuarios agendar visitas seleccionando horarios d
 **RF5 - Administración de inmuebles:**  
 El sistema debe permitir al administrador crear, editar y eliminar propiedades dentro del sistema.
 
----
 
-### 🔹 Requerimientos No Funcionales (RNF)
+Requerimientos No Funcionales (RNF)
 
-**RNF1 - Compatibilidad:**  
-El sistema debe ser accesible desde navegadores web modernos como Chrome, Edge y Firefox.
+**RNF1 - Seguridad:**  
+ El sistema debe proteger la información personal y documentación cargada por los usuarios mediante autenticación segura, almacenamiento cifrado de contraseñas y sanitizar (limpieza de caracteres peligrosos) los contenidos para evitar ataques de inyección de código .
+Métrica: Las contraseñas deben almacenarse utilizando algoritmo bcrypt con factor de costo mínimo de 10.
+Prioridad: Alta
+Método de aceptación: Auditoría de base de datos y revisión de código de autenticación.
 
-**RNF2 - Seguridad:**  
-El sistema debe garantizar la protección de los datos personales y la documentación de los usuarios.
+**RNF2 - Disponibilibidad del sistema:**  
+ El sistema debe mantener una disponibilidad mínima del 99% mensual, excluyendo períodos de mantenimiento programado. 
+Métrica: Disponibilidad mensual igual o superior al 99%. 
+Prioridad: Alta
+Método de aceptación: Monitoreo continuo mediante herramientas de uptime y registros del servidor
 
 **RNF3 - Usabilidad:**  
 El sistema debe contar con una interfaz intuitiva, fácil de usar y accesible para todo tipo de usuario.
 
----
 
-## 👤 Tipos de usuario
+
+Tipos de usuario
 
 - **Usuario (cliente):**
   - Busca inmuebles
@@ -114,11 +129,11 @@ El sistema debe contar con una interfaz intuitiva, fácil de usar y accesible pa
   - Administra visitas
   - Controla el proceso completo
 
----
 
-## 🧱 Tecnologías utilizadas
 
-### 🎨 Frontend
+Tecnologías utilizadas
+
+Frontend
 
 - Angular
 - TypeScript
@@ -126,28 +141,28 @@ El sistema debe contar con una interfaz intuitiva, fácil de usar y accesible pa
 - CSS3
 - Bootstrap
 
-### ⚙️ Backend
+Backend
 
 - Python
 - Django
 - Django REST Framework (DRF)
 
-### 🗄️ Base de datos
+Base de datos
 
 - MySQL
 
-### 🔐 Configuración y seguridad
+Configuración y seguridad
 
 - Variables de entorno (.env)
 
-### 🛠 Herramientas de desarrollo
+Herramientas de desarrollo
 
 - Git
 - GitHub
 
----
 
-## 🗄️ Estructura de datos (conceptual)
+
+Estructura de datos (conceptual)
 
 - Inmuebles
 - Usuarios
@@ -156,9 +171,9 @@ El sistema debe contar con una interfaz intuitiva, fácil de usar y accesible pa
 - Visitas
 - Notificaciones
 
----
 
-## 🔄 Flujo del sistema
+
+Flujo del sistema
 
 1. El usuario accede a la plataforma
 2. Busca propiedades mediante filtros
@@ -172,16 +187,16 @@ El sistema debe contar con una interfaz intuitiva, fácil de usar y accesible pa
 10. Recibe confirmación y seguimiento
 11. Finaliza con firma y entrega del inmueble
 
----
 
-## 📈 Estado del proyecto
 
-🚧 En desarrollo  
+Estado del proyecto
+
+ En desarrollo  
 Actualmente se encuentra en etapa de construcción del MVP (Producto Mínimo Viable)
 
----
 
-## 💡 Próximas mejoras
+
+ Próximas mejoras
 
 - Sistema de notificaciones en tiempo real
 - Integración con correo electrónico
@@ -189,9 +204,9 @@ Actualmente se encuentra en etapa de construcción del MVP (Producto Mínimo Via
 - Historial completo de operaciones
 - Optimización de UX/UI
 
----
 
-## 👨‍💻 Equipo de esarrollo
+
+Equipo de esarrollo
 
 - Michael David Farias
 - Dolores Fernández Rubio
