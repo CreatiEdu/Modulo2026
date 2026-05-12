@@ -50,7 +50,6 @@ Tecnologías utilizadas
 - Interfaz intuitiva y fácil de utilizar.
 
 
-
 ## Instalación y ejecución del Frontend
 
 1. Ingresar a la carpeta frontend: cd frontend
@@ -103,11 +102,12 @@ Proyecto académico en desarrollo correspondiente al período abril - junio 2026
 
 ## Equipo de esarrollo
 
-- Michael David Farias
-- Dolores Fernández Rubio
-- Franco Fernández Rubio
-- Matías Rodríguez Valenzuela
-- Alejandro Gariglio
-- Matías Eric Astrada
+- Astrada Matías Eric
+- Farias Michael David
+- Fernandez Rubio Dolores
+- Fernandez Rubio Franco
+- Rodríguez Valenzuela Matías
+- Gariglio Alejandro
+- 
 
 ---
