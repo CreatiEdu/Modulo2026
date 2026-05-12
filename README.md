@@ -1,164 +1,55 @@
-InmoSmart - Sistema Web para Gestión Inmobiliaria
+# InmoSmart - Sistema Web para Gestión Inmobiliaria
 
-Descripción
+## Descripción
 
-InmoSmart es una aplicación web desarrollada para optimizar la gestión de propiedades inmobiliarias y mejorar la experiencia de los usuarios que buscan alquilar o comprar inmuebles.
-
-El sistema permite visualizar propiedades, aplicar filtros avanzados, postularse a inmuebles, adjuntar documentación requerida, coordinar visitas y gestionar el proceso completo desde la consulta hasta la entrega del inmueble.
+INMOSMART es una aplicación web que digitaliza y centraliza la gestión de alquileres y ventas inmobiliarias. Surge con el objetivo de resolver la desorganización y las demoras causadas por el uso de métodos manuales como WhatsApp y registros en papel. La plataforma permitirá a los usuarios ver propiedades, cargar documentación y solicitar visitas desde un mismo lugar. A su vez, ayudará a las inmobiliarias a automatizar tareas administrativas y mejorar la organización de la información. De esta manera, se optimiza el tiempo y se brinda una experiencia más ágil y eficiente para todos los involucrados 
 
 
-
-Objetivo
-
-Digitalizar y automatizar el proceso inmobiliario, facilitando:
-
-- La búsqueda eficiente de inmuebles para los usuarios
-- La gestión centralizada de propiedades para la inmobiliaria
-- La automatización de postulaciones, aprobaciones y visitas
-
-
-
-Funcionalidades Principales
-
-Búsqueda de inmuebles
-
-- Filtros por:
-  - Tipo de operación (alquiler / venta)
-  - Tipo de inmueble (casa / departamento)
-  - Cantidad de habitaciones
-  - Características (cochera, patio, etc.)
-- Visualización de:
-  - Fotos
-  - Descripción detallada
-  - Precio y ubicación
-
-Postulación a inmuebles
-
-- Visualización de requisitos y garantías
-- Envío de solicitud
-- Adjuntar documentación requerida
-- Seguimiento del estado:
-  - Pendiente
-  - En revisión
-  - Aprobado
-  - Rechazado
-
- Gestión de visitas
-
-- Selección de horarios disponibles
-- Reserva de turnos
-- Confirmación de visitas
-
-Notificaciones
-
-- Confirmación de postulación
-- Estado de aprobación
-- Avisos de visitas
-- Notificación final para firma y entrega de llave
-
-Panel administrativo
-
-- Alta, edición y eliminación de inmuebles
-- Gestión de solicitudes
-- Aprobación o rechazo de postulantes
-- Administración de horarios de visitas
-- Visualización de documentación
-
-
-
-Especificación de Requerimientos
-
-Requerimientos Funcionales (RF)
-
-**RF1 - Búsqueda de inmuebles:**  
-El sistema debe permitir a los usuarios buscar inmuebles mediante filtros como tipo de operación (Venta / alquiler), tipo de inmueble y características específicas (cantidad de habitaciones, ubicación y rango de precio).
-Actor: Usuario
-Prioridad: Must
-Criterio de verificación: El sistema debe mostrar únicamente los inmuebles que coincidan con los filtros seleccionados por el usuario y actualizar los resultados en menos de 3 segundos bajo las condiciones normales de uso.
-
-
-**RF2 - Visualización de propiedades:**  
-El sistema debe permitir al usuario visualizar la información detallada de un inmueble seleccionando, incluyendo galería de imágenes, descripción, precio, requisitos y ubicación geográfica mediante un mapa interactivo.
-Actor: Usuario
-Prioridad: Must
-Criterio de aceptación: El sistema debe mostrar correctamente toda la información asociada al inmueble seleccionado sin omitir campos obligatorios ni presentar errores de carga.
-
-**RF3 - Postulación a inmuebles:**  
-El sistema debe permitir al usuario confirmar su postulación para adquirir o alquilar  un inmueble y adjuntar la documentación requerida para su evaluación. 
-Actor: Usuario
-Prioridad: Must
-Criterio de aceptación: El sistema debe almacenar correctamente la  confirmación de postulación, los archivos adjuntos asociados al usuario y al inmueble seleccionado.
-
-**RF4 - Gestión de visitas:**  
-El sistema debe permitir a los usuarios agendar visitas seleccionando horarios disponibles.
-
-**RF5 - Administración de inmuebles:**  
-El sistema debe permitir al administrador crear, editar y eliminar propiedades dentro del sistema.
-
-
-Requerimientos No Funcionales (RNF)
-
-**RNF1 - Seguridad:**  
- El sistema debe proteger la información personal y documentación cargada por los usuarios mediante autenticación segura, almacenamiento cifrado de contraseñas y sanitizar (limpieza de caracteres peligrosos) los contenidos para evitar ataques de inyección de código .
-Métrica: Las contraseñas deben almacenarse utilizando algoritmo bcrypt con factor de costo mínimo de 10.
-Prioridad: Alta
-Método de aceptación: Auditoría de base de datos y revisión de código de autenticación.
-
-**RNF2 - Disponibilibidad del sistema:**  
- El sistema debe mantener una disponibilidad mínima del 99% mensual, excluyendo períodos de mantenimiento programado. 
-Métrica: Disponibilidad mensual igual o superior al 99%. 
-Prioridad: Alta
-Método de aceptación: Monitoreo continuo mediante herramientas de uptime y registros del servidor
-
-**RNF3 - Usabilidad:**  
-El sistema debe contar con una interfaz intuitiva, fácil de usar y accesible para todo tipo de usuario.
-
-
-
-Tipos de usuario
-
-- **Usuario (cliente):**
-  - Busca inmuebles
-  - Se postula
-  - Adjunta documentación
-  - Agenda visitas
-
-- **Administrador (inmobiliaria):**
-  - Gestiona propiedades
-  - Revisa solicitudes
-  - Administra visitas
-  - Controla el proceso completo
-
-
+## Tecnologias
 
 Tecnologías utilizadas
 
-Frontend
+### Frontend
 
 - Angular
 - TypeScript
-- HTML5
-- CSS3
+- HTML
+- CSS
 - Bootstrap
 
-Backend
+### Backend
 
 - Python
 - Django
-- Django REST Framework (DRF)
+- Django REST Framework
 
-Base de datos
+### Base de datos
 
 - MySQL
 
-Configuración y seguridad
-
-- Variables de entorno (.env)
-
-Herramientas de desarrollo
+### Herramientas de desarrollo
 
 - Git
 - GitHub
+
+
+## Funcionalidades Principales
+
+- Búsqueda de inmuebles mediante filtros.
+- Visualización detallada de propiedades.
+- Postulación a inmuebles con carga de documentación.
+- Gestión de inmuebles por parte del administrador.
+- Gestión de solicitudes de visitas.
+- Gestión de documentación enviada por usuarios.
+
+## Requisitos no funcionales principales
+
+- Seguridad mediante autenticación y cifrado de contraseñas.
+- Compatibilidad con navegadores modernos.
+- Disponibilidad mínima del 99%.
+- Interfaz intuitiva y fácil de utilizar.
+
+
 
 ## Instalación y ejecución del Frontend
 
@@ -204,24 +95,13 @@ Flujo del sistema
 
 
 
-Estado del proyecto
+## Estado del proyecto
 
- En desarrollo  
-Actualmente se encuentra en etapa de construcción del MVP (Producto Mínimo Viable)
-
-
-
- Próximas mejoras
-
-- Sistema de notificaciones en tiempo real
-- Integración con correo electrónico
-- Panel administrativo avanzado
-- Historial completo de operaciones
-- Optimización de UX/UI
+Proyecto académico en desarrollo correspondiente al período abril - junio 2026.
 
 
 
-Equipo de esarrollo
+## Equipo de esarrollo
 
 - Michael David Farias
 - Dolores Fernández Rubio
