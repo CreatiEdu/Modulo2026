@@ -160,17 +160,32 @@ Herramientas de desarrollo
 - Git
 - GitHub
 
+## Instalación y ejecución del Frontend
+
+1. Ingresar a la carpeta frontend: cd frontend
+
+2. Instalar dependencias: npm install
+
+3. Ejecutar servidor Angular: ng serve
+
+4. Abrir en navegador: http://localhost:4200
 
 
-Estructura de datos (conceptual)
+## Instalación y ejecución del Backend
 
-- Inmuebles
-- Usuarios
-- Solicitudes
-- Documentación (garantías)
-- Visitas
-- Notificaciones
+1. Clonar el repositorio: git clone URL_DEL_REPOSITORIO
 
+2. Ingresar a la carpeta backend: cd backend
+
+3. Crear entorno virtual: python -m venv venv
+
+4. Activar entorno virtual: Windows: venv\Scripts\activate
+
+5. Instalar dependencias: pip install -r requirements.txt
+
+6. Ejecutar migraciones: python manage.py migrate
+
+7. Iniciar servidor: python manage.py runserver
 
 
 Flujo del sistema
