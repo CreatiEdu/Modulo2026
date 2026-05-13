@@ -1,0 +1,44 @@
+<section class="quienes-somos">
+  <div class="hero">
+    <h1>¿Quiénes Somos?</h1>
+    <p>Somos una inmobiliaria comprometida con ayudarte a encontrar tu hogar ideal.</p>
+  </div>
+
+  <div class="contenido">
+    <div class="mision-vision">
+      <div class="card">
+        <h2>Misión</h2>
+        <p>
+          Conectar a las personas con la propiedad ideal de forma simple, transparente y segura.
+        </p>
+      </div>
+      <div class="card">
+        <h2>Visión</h2>
+        <p>
+          Ser una inmobiliaria de referencia en Córdoba, innovando constantemente para nuestros
+          clientes.
+        </p>
+      </div>
+      <div class="card">
+        <h2>Valores</h2>
+        <ul>
+          <li>Transparencia</li>
+          <li>Compromiso</li>
+          <li>Innovación</li>
+          <li>Confianza</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="equipo">
+      <h2>Nuestro Equipo</h2>
+      <div class="equipo-grid">
+        <div class="miembro" *ngFor="let miembro of equipo">
+          <div class="avatar">{{ miembro.iniciales }}</div>
+          <h3>{{ miembro.nombre }}</h3>
+          <p>{{ miembro.rol }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
