@@ -1,0 +1,75 @@
+<div class="dashboard-admin">
+
+  <div class="encabezado">
+    <h2>Panel de Administración</h2>
+    <a routerLink="/" class="btn-cerrar">Cerrar sesión</a>
+  </div>
+
+  <div class="metricas">
+    @for (metrica of metricas; track metrica.label) {
+      <div class="metrica-card">
+        <span class="metrica-valor">{{ metrica.valor }}</span>
+        <span class="metrica-label">{{ metrica.label }}</span>
+      </div>
+    }
+  </div>
+
+  <div class="tablas">
+
+    <div class="tabla-seccion">
+      <h3>Usuarios</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Rol</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (usuario of usuarios; track usuario.email) {
+            <tr>
+              <td>{{ usuario.nombre }}</td>
+              <td>{{ usuario.email }}</td>
+              <td>{{ usuario.rol }}</td>
+              <td>
+                <span [class]="usuario.estado === 'Activo' ? 'badge-verde' : 'badge-rojo'">
+                  {{ usuario.estado }}
+                </span>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tabla-seccion">
+      <h3>Propiedades</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Ubicación</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (prop of propiedades; track prop.titulo) {
+            <tr>
+              <td>{{ prop.titulo }}</td>
+              <td>{{ prop.ubicacion }}</td>
+              <td>
+                <span [class]="prop.estado === 'Disponible' ? 'badge-verde' : 'badge-amarillo'">
+                  {{ prop.estado }}
+                </span>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,133 @@
+.dashboard-admin {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a3a6b;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.encabezado h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.btn-cerrar {
+  background-color: #e53e3e;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.btn-cerrar:hover {
+  background-color: #c53030;
+  color: white;
+}
+
+.metricas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.metrica-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.metrica-valor {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1a3a6b;
+}
+
+.metrica-label {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.tablas {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.tabla-seccion {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.tabla-seccion h3 {
+  color: #1a3a6b;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  padding: 10px;
+  background-color: #f7f7f7;
+  font-size: 0.85rem;
+  color: #555;
+  border-bottom: 1px solid #ddd;
+}
+
+td {
+  padding: 10px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+.badge-verde {
+  background-color: #c6f6d5;
+  color: #276749;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.badge-amarillo {
+  background-color: #fefcbf;
+  color: #744210;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.badge-rojo {
+  background-color: #fed7d7;
+  color: #822727;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}

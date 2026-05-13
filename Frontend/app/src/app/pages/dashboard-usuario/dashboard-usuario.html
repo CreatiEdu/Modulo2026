@@ -1,0 +1,50 @@
+<div class="dashboard">
+  <div class="bienvenida">
+    <h2>Hola, {{ usuario.nombre }}</h2>
+    <p>Panel personal</p>
+  </div>
+
+  <div class="secciones">
+    <div class="seccion">
+      <h3>Propiedades guardadas</h3>
+      @for (item of favoritos; track item.id) {
+        <div class="card-item">
+          <strong>{{ item.titulo }}</strong>
+          <p>{{ item.ubicacion }}</p>
+          <span class="precio">{{ item.precio }}</span>
+        </div>
+      }
+    </div>
+
+    <div class="seccion">
+      <h3>Visitas programadas</h3>
+      @for (visita of visitas; track visita.id) {
+        <div class="card-item">
+          <strong>{{ visita.propiedad }}</strong>
+          <p>{{ visita.fecha }} a las {{ visita.hora }}</p>
+          <span [class]="visita.estado === 'Confirmada' ? 'badge-verde' : 'badge-amarillo'">
+            {{ visita.estado }}
+          </span>
+        </div>
+      }
+    </div>
+  </div>
+</div>
+<div class="seccion">
+  <h3>Seguimiento de trámite</h3>
+  <p>
+    <strong>{{ tramite.propiedad }}</strong> — {{ tramite.estado }}
+  </p>
+  <div class="pasos">
+    @for (paso of tramite.pasos; track paso.nombre) {
+      <div class="paso">
+        <span [class]="paso.completado ? 'check-ok' : 'check-pendiente'">
+          {{ paso.completado ? '✓' : '○' }}
+        </span>
+        <span [class]="paso.completado ? 'paso-completado' : 'paso-pendiente'">
+          {{ paso.nombre }}
+        </span>
+      </div>
+    }
+  </div>
+</div>
