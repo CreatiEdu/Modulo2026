@@ -1,0 +1,128 @@
+.carousel-item img {
+    height: 500px; /* O la altura que mejor se adapte a tu diseño */
+    object-fit: cover; /* Esto evita que la imagen se estire o deforme */
+}
+/* --- Estilos del Mosaico de Fotos --- */
+.mosaico-imagenes {
+    display: flex;
+    gap: 15px; /* Espacio entre las dos columnas de fotos */
+    height: 450px; /* Altura total fija para el mosaico */
+}
+
+.columna-mosaico {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio vertical entre fotos */
+}
+
+/* Control de proporciones asimétricas */
+.foto-larga {
+    flex: 1.4; /* Ocupa más espacio vertical */
+}
+
+.foto-corta {
+    flex: 0.8; /* Ocupa menos espacio vertical */
+}
+
+/* Contenedor individual con bordes redondeados */
+.contenedor-img {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px; /* Esquinas redondeadas como la imagen */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
+
+.contenedor-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que las imágenes se deformen */
+    transition: transform 0.3s ease;
+}
+
+/* Efecto visual opcional al pasar el mouse */
+.contenedor-img img:hover {
+    transform: scale(1.03);
+}
+
+/* --- Estilos del Texto y Botón --- */
+.titulo-estudio {
+    color: #111111;
+    font-size: 2rem;
+    line-height: 1.4;
+}
+
+.subtitulo-estudio {
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+/* Color marrón/dorado corporativo de tu imagen */
+.btn-propiedades {
+    background-color: #9A8043;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-propiedades:hover {
+    background-color: #7E6733;
+    color: #ffffff;
+}
+
+/* Ajuste para pantallas chicas (Celulares) */
+@media (max-width: 767.98px) {
+    .mosaico-imagenes {
+        height: 350px; /* Un poco más bajo en celulares */
+    }
+    .titulo-estudio {
+        font-size: 1.6rem;
+        margin-top: 15px;
+    }
+}
+
+
+
+/* --- Estilos del parte de categorías --- */
+/* Color dorado del subtítulo superior */
+.letras-oro {
+    color: #9A8043;
+    letter-spacing: 1px;
+}
+
+.titulo-seccion {
+    color: #111111;
+}
+
+/* Contenedor de la foto para aplicar el redondeado exacto */
+.contenedor-imagen {
+    border-radius: 12px; /* Esquinas redondeadas del diseño original */
+    height: 380px;       /* Altura fija para mantener la simetría */
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra sutil bajo la foto */
+}
+
+.contenedor-imagen img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease;
+}
+
+/* Animación sutil al pasar el mouse sobre la tarjeta */
+.card-categoria:hover .contenedor-imagen img {
+    transform: scale(1.04);
+}
+
+/* Estilo de los títulos de abajo */
+.titulo-tarjeta {
+    color: #1A1A1A;
+    letter-spacing: 0.3px;
+    font-size: 1.15rem;
+    transition: color 0.2s ease;
+}
+
+/* Efecto opcional: el texto cambia ligeramente de color al posicionar el mouse */
+.card-categoria:hover .titulo-tarjeta {
+    color: #9A8043; /* Se torna del color dorado corporativo */
+}
