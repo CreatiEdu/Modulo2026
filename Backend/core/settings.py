@@ -79,8 +79,8 @@ DATABASES = {
     'default': {
     'ENGINE': 'django.db.backends.mysql',
     'NAME': 'inmosmart',
-    'USER': 'usuario',
-    'PASSWORD': 'laclave',
+    'USER': 'root',
+    'PASSWORD': 'password',
     'HOST': 'localhost',
     'PORT': '3306',
     }

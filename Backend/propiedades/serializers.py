@@ -4,4 +4,4 @@ from .models import Propiedad
 class PropiedadSerializer(serializers.ModelSerializer):
     class Meta:
         model = Propiedad
-        fields = '__all__'
+        fields = ['titulo', 'descripcion', 'direccion', 'precio', 'disponible', 'fecha_creacion']
