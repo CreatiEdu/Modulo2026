@@ -1,6 +1,6 @@
 .carousel-item img {
-    height: 500px; /* O la altura que mejor se adapte a tu diseño */
-    object-fit: cover; /* Esto evita que la imagen se estire o deforme */
+    height: 500px; 
+    object-fit: cover;
 }
 /* --- Estilos del Mosaico de Fotos --- */
 .mosaico-imagenes {
@@ -59,7 +59,7 @@
 
 /* Color marrón/dorado corporativo de tu imagen */
 .btn-propiedades {
-    background-color: #9A8043;
+    background-color: #43869a;
     color: #ffffff;
     border: none;
     border-radius: 6px;
@@ -124,5 +124,14 @@
 
 /* Efecto opcional: el texto cambia ligeramente de color al posicionar el mouse */
 .card-categoria:hover .titulo-tarjeta {
-    color: #9A8043; /* Se torna del color dorado corporativo */
+    color: hsl(241, 39%, 43%); /* Se torna del color dorado corporativo */
 }
+/* Hover zoom en imágenes de categorías */
+.contenedor-imagen img {
+  transition: transform 0.4s ease;
+}
+
+.card-categoria:hover .contenedor-imagen img {
+  transform: scale(1.05);
+}
+ 

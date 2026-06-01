@@ -1,0 +1,9 @@
+.main-footer {
+  background-color: #0d47a1;   
+  color: #ffffff;              
+  padding: 20px 0;             
+  font-size: 0.9rem;           
+  border-top: 1px solid #0a3a82; 
+  width: 100%;
+  margin-top: auto;            
+}

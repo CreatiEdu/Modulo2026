@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import json
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -75,15 +76,16 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# Cargar configuración de base de datos desde db_config.json
+try:
+    with open(BASE_DIR / 'db_config.json') as f:
+        db_config = json.load(f)
+except FileNotFoundError:
+    raise FileNotFoundError("No se encontro el archivo db_config.json")
+
 DATABASES = {
-    'default': {
-    'ENGINE': 'django.db.backends.mysql',
-    'NAME': 'inmosmart',
-    'USER': 'usuario',
-    'PASSWORD': 'laclave',
-    'HOST': 'localhost',
-    'PORT': '3306',
-    }
+    'default': db_config
+    # For New Implementations, you need to copy the db_config_example.json file to db_config.json file and edit it
 }
 
 
