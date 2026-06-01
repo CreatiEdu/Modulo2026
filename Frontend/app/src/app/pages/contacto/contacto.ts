@@ -2,8 +2,11 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-contacto',
+  standalone: true,
   imports: [],
   templateUrl: './contacto.html',
-  styleUrl: './contacto.css',
+  styleUrls: ['./contacto.css']
 })
-export class Contacto {}
+export class Contacto {
+  // Dejamos la clase vacía y con el nombre exacto 'Contacto' para solucionar el error de rutas
+}
