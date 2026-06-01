@@ -6,6 +6,7 @@ import { Contacto } from './pages/contacto/contacto';
 import { DashboardUsuario } from './pages/dashboard-usuario/dashboard-usuario';
 import { DashboardAdmin } from './pages/dashboard-admin/dashboard-admin';
 import { Pagina404 } from '../pages/pagina404/pagina404';
+import { TerrenosLotes } from './pages/terrenos-lotes/terrenos-lotes';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -14,6 +15,7 @@ export const routes: Routes = [
   { path: 'dashboard-usuario', component: DashboardUsuario },
   { path: 'dashboard-admin', component: DashboardAdmin },
   { path: 'contacto', component: Contacto },
+  { path: 'terrenos-lotes', component: TerrenosLotes },
 
   // agregado de rutas
   { path: '', redirectTo: '/home', pathMatch: 'full' },
