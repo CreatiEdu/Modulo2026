@@ -9,6 +9,7 @@ import { DetallePropiedad } from './pages/detalle-propiedad/detalle-propiedad';
 import { DashboardUsuario } from './pages/dashboard-usuario/dashboard-usuario';
 import { DashboardAdmin } from './pages/dashboard-admin/dashboard-admin';
 import { Pagina404 } from '../pages/pagina404/pagina404';
+import { CasaVenta } from './pages/casa-venta/casa-venta';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -20,6 +21,7 @@ export const routes: Routes = [
   { path: 'propiedades', component: Propiedades},
   { path: 'propiedad/:id', component: DetallePropiedad},
   { path: 'alquileres', component:Alquileres},
+  { path: 'casas-venta', component: CasaVenta },
 
 
   // agregado de rutas
