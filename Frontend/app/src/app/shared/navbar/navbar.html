@@ -61,17 +61,25 @@
             href="#"
             role="button"
             data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
+            aria-expanded="false">
             Propiedades
           </a>
+          
+          <ul
+           class="dropdown-menu">
+              <li>
+                <a class="dropdown-item"  
+                  routerLink="/propiedades" 
+                  routerLinkActive="active">
+                  Ver todas las Propiedades
+                </a>
+              </li>
 
-          <ul class="dropdown-menu">
             <li>
               <a class="dropdown-item"
-              routerLink="/casas-venta"
-              routerLinkActive="active">
-              Casas en venta
+                routerLink="/casas-venta"
+                routerLinkActive="active">
+                Casas en venta
               </a>
             </li>
 
@@ -82,12 +90,11 @@
                 Lotes y terrenos en venta
               </a>
             </li>
-
-            <li><hr class="dropdown-divider" /></li>
-
+            
             <li>
               <a class="dropdown-item"
-              routerLink="/alquileres">
+                routerLink="/alquileres"
+                routerLinkActive="active">
                 Alquileres
               </a>
             </li>
