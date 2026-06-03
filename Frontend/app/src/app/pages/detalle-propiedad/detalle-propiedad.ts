@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PropiedadesService } from '../../services/propiedades';
+import { AuthService } from '../../services/AuthService';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-detalle-propiedad',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './detalle-propiedad.html',
   styleUrl: './detalle-propiedad.css',
 })
@@ -15,7 +17,8 @@ export class DetallePropiedad {
   id = 0;
   constructor(
     private route :ActivatedRoute,
-    private PropiiedadesService: PropiedadesService
+    private PropiiedadesService: PropiedadesService,
+    public authService: AuthService,
   ) {
     
     const id =Number (
