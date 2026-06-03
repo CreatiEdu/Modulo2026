@@ -1,31 +1,28 @@
 <section class="quienes-somos">
+
   <div class="hero">
     <h1>¿Quiénes Somos?</h1>
-    <p>Somos una inmobiliaria comprometida con ayudarte a encontrar tu hogar ideal.</p>
+    <p>Somos una inmobiliaria ubicada en Río Cuarto, Córdoba. Nos dedicamos a conectar personas con la propiedad ideal, ya sea para alquilar o comprar.</p>
   </div>
 
   <div class="contenido">
+
     <div class="mision-vision">
       <div class="card">
         <h2>Misión</h2>
-        <p>
-          Conectar a las personas con la propiedad ideal de forma simple, transparente y segura.
-        </p>
+        <p>Brindar un servicio inmobiliario transparente, ágil y personalizado para cada cliente de Río Cuarto y la región.</p>
       </div>
       <div class="card">
         <h2>Visión</h2>
-        <p>
-          Ser una inmobiliaria de referencia en Córdoba, innovando constantemente para nuestros
-          clientes.
-        </p>
+        <p>Ser la inmobiliaria de referencia en el sur de Córdoba, destacándonos por la confianza y el trato cercano con nuestros clientes.</p>
       </div>
       <div class="card">
         <h2>Valores</h2>
         <ul>
-          <li>Transparencia</li>
+          <li>Honestidad</li>
           <li>Compromiso</li>
-          <li>Innovación</li>
-          <li>Confianza</li>
+          <li>Transparencia</li>
+          <li>Cercanía</li>
         </ul>
       </div>
     </div>
@@ -33,12 +30,18 @@
     <div class="equipo">
       <h2>Nuestro Equipo</h2>
       <div class="equipo-grid">
-        <div class="miembro" *ngFor="let miembro of equipo">
-          <div class="avatar">{{ miembro.iniciales }}</div>
-          <h3>{{ miembro.nombre }}</h3>
-          <p>{{ miembro.rol }}</p>
-        </div>
+        @for (miembro of equipo; track miembro.nombre) {
+          <div class="miembro">
+            <div class="foto-container">
+              <img [src]="miembro.foto" [alt]="miembro.nombre" class="foto" />
+            </div>
+            <h3>{{ miembro.nombre }}</h3>
+            <p>{{ miembro.rol }}</p>
+          </div>
+        }
       </div>
     </div>
+
   </div>
+
 </section>

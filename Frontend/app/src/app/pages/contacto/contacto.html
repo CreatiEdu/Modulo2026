@@ -1,0 +1,101 @@
+<div class="container contacto-container">
+
+  <div class="contacto-header">
+    <h1>Contacto</h1>
+    <p>Comunicate con INMOSMART para consultas y asesoramiento.</p>
+  </div>
+
+  <div class="contenido-contacto">
+
+   <!-- FORMULARIO -->
+<form
+  class="formulario"
+  action="https://formspree.io/f/xwvzdkqo"
+  method="POST"
+>
+ <input
+    type="hidden"
+    name="_next"
+    value="http://localhost:4200/contacto"
+  >
+  <input
+  type="hidden"
+  name="_subject"
+  value="Nuevo mensaje desde INMOSMART"
+/>
+  <input
+    type="text"
+    name="nombre"
+    placeholder="Tu nombre"
+    required
+  >
+  <input
+  type="tel"
+  name="telefono"
+  placeholder="Tu teléfono"
+  required
+  >
+
+  <input
+    type="email"
+    name="email"
+    placeholder="Tu email"
+    required
+  >
+
+  <input
+    type="text"
+    name="asunto"
+    placeholder="Asunto"
+    required
+  >
+
+  <textarea
+    name="mensaje"
+    rows="5"
+    placeholder="Escribí tu mensaje"
+    required
+  ></textarea>
+
+  <button type="submit">
+    Enviar
+  </button>
+
+</form>
+
+    <!-- INFORMACIÓN -->
+    <div class="info-contacto">
+
+      <div class="card-info">
+        <h3>📍 Dirección</h3>
+        <p>Córdoba, Argentina</p>
+      </div>
+
+      <div class="card-info">
+        <h3>📞 Teléfono</h3>
+        <p>351-123456</p>
+      </div>
+
+      <div class="card-info">
+        <h3>✉️ Email</h3>
+        <p>contacto@inmosmart.com</p>
+      </div>
+      <div class="mapa">
+
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.655590113844!2d-64.25773652511901!3d-31.396058795267614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94329f3ab18d8885%3A0x63ca72ff688d7995!2sPuesto%20del%20Marqu%C3%A9s%205550%2C%20X5002AUD%20C%C3%B3rdoba!5e0!3m2!1ses-419!2sar!4v1780354158839!5m2!1ses-419!2sar"
+    width="100%"
+    height="300"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+
+</div>
+
+    </div>
+
+  </div>
+
+</div>

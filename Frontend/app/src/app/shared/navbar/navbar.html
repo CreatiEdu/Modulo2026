@@ -1,6 +1,13 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Inmobiliaria</a>
+    
+ <a class="navbar-brand d-flex align-items-center ms-3" routerLink="/">
+  <img src="assets/propiedades/logo1.png" 
+       alt="Logo InmoSmart" 
+       width="45" 
+       height="45" 
+       class="d-inline-block align-middle logo-nav"> </a>
+
     <button
       class="navbar-toggler"
       type="button"
@@ -12,43 +19,140 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
         <li class="nav-item">
           <a
             class="nav-link"
             routerLink="/"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
-            >Home</a
           >
+            Home
+          </a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link" routerLink="/quienes-somos" routerLinkActive="active">Nosotros</a>
+          <a
+            class="nav-link"
+            routerLink="/quienes-somos"
+            routerLinkActive="active"
+          >
+            Nosotros
+          </a>
         </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/contacto"
+            routerLinkActive="active"
+          >
+            Contacto
+          </a>
+        </li>
+
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
             href="#"
             role="button"
             data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Mas Informacion
+            aria-expanded="false">
+            Propiedades
           </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Contactos</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          
+          <ul
+           class="dropdown-menu">
+              <li>
+                <a class="dropdown-item"  
+                  routerLink="/propiedades" 
+                  routerLinkActive="active">
+                  Ver todas las Propiedades
+                </a>
+              </li>
+
+            <li>
+              <a class="dropdown-item"
+                routerLink="/casas-venta"
+                routerLinkActive="active">
+                Casas en venta
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item"  
+                routerLink="/terrenos-lotes" 
+                routerLinkActive="active">
+                Lotes y terrenos en venta
+              </a>
+            </li>
+            
+            <li>
+              <a class="dropdown-item"
+                routerLink="/alquileres"
+                routerLinkActive="active">
+                Alquileres
+              </a>
+            </li>
           </ul>
         </li>
+
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-      <a routerLink="/login" class="btn btn-outline-primary ms-2">Iniciar Sesión</a>
+
+      @if (!authService.isLoggedIn()) {
+        <a
+          routerLink="/login"
+          class="btn btn-outline-primary ms-2">
+          Iniciar Sesión
+        </a>
+        
+        <a
+          routerLink="/register"
+          class="btn btn-primary ms-2">
+          Registrarse
+        </a>
+      }
+
+      @if (authService.isLoggedIn() &&
+     authService.getRole() === 'cliente') {
+      <a
+          routerLink="/dashboard-usuario"
+          class="btn btn-success ms-2">
+            Mi Panel
+        </a>
+
+        <button
+          class="btn btn-danger ms-2"
+          (click)="logout()">
+          Cerrar Sesión
+        </button>
+      }
+
+      @if (authService.isLoggedIn() &&
+     authService.getRole() === 'admin') {
+        <a
+          routerLink="/dashboard-admin"
+          class="btn btn-warning ms-2"
+          >
+          Panel Admin
+        </a>
+        <a
+          routerLink="/crear-propiedad"
+          class="btn btn-success ms-2">
+          Publicar Inmueble
+        </a>
+
+        <button
+          class="btn btn-danger ms-2"
+          (click)="logout()">
+          Cerrar Sesión
+        </button>
+      }
+
     </div>
   </div>
 </nav>

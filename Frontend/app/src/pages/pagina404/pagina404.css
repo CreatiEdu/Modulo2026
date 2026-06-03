@@ -1,0 +1,47 @@
+.container-404 {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+.number-404 {
+  font-size: 120px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -4px;
+  margin: 0;
+}
+.number-404 span { color: #534AB7; }
+.divider {
+  width: 48px;
+  height: 3px;
+  background: #534AB7;
+  border-radius: 2px;
+  margin: 1.5rem auto;
+}
+h1 { font-size: 22px; font-weight: 500; margin: 0 0 0.75rem; }
+.descripcion { color: #888; margin: 0 0 2rem; max-width: 360px; }
+.icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #EEEDFE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 32px;
+  color: #534AB7;
+}
+.btn-home {
+  padding: 10px 24px;
+  background: #534AB7;
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  text-decoration: none;
+}
+.btn-home:hover { background: #3C3489; }

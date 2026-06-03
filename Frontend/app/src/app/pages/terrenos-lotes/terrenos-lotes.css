@@ -1,0 +1,27 @@
+/* Control de comportamiento de las tarjetas */
+.propiedad-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Efecto Hover sutil al pasar por encima como las inmobiliarias premium */
+.propiedad-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Evita distorsiones en las imágenes de los terrenos */
+.img-fluida {
+    height: 240px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* Color destacado de la etiqueta de precios */
+.badge {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
+    background-color: #2b2b2b !important; /* Estilo sobrio y oscuro */
+}
