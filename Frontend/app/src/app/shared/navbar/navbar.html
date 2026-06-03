@@ -102,10 +102,56 @@
         </li>
 
       </ul>
-      
-      <a routerLink="/login" class="btn btn-outline-primary ms-2">
-        Iniciar Sesión
-      </a>
+
+      @if (!authService.isLoggedIn()) {
+        <a
+          routerLink="/login"
+          class="btn btn-outline-primary ms-2">
+          Iniciar Sesión
+        </a>
+        
+        <a
+          routerLink="/register"
+          class="btn btn-primary ms-2">
+          Registrarse
+        </a>
+      }
+
+      @if (authService.isLoggedIn() &&
+     authService.getRole() === 'cliente') {
+      <a
+          routerLink="/dashboard-usuario"
+          class="btn btn-success ms-2">
+            Mi Panel
+        </a>
+
+        <button
+          class="btn btn-danger ms-2"
+          (click)="logout()">
+          Cerrar Sesión
+        </button>
+      }
+
+      @if (authService.isLoggedIn() &&
+     authService.getRole() === 'admin') {
+        <a
+          routerLink="/dashboard-admin"
+          class="btn btn-warning ms-2"
+          >
+          Panel Admin
+        </a>
+        <a
+          routerLink="/crear-propiedad"
+          class="btn btn-success ms-2">
+          Publicar Inmueble
+        </a>
+
+        <button
+          class="btn btn-danger ms-2"
+          (click)="logout()">
+          Cerrar Sesión
+        </button>
+      }
 
     </div>
   </div>

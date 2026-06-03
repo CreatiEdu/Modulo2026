@@ -4,6 +4,7 @@ import { Home } from './pages/home/home';
 import { Login } from './pages/login/login';
 import { Register } from './pages/register/register';
 import { Contacto } from './pages/contacto/contacto';
+import { CrearPropiedad } from './pages/crear-propiedad/crear-propiedad';
 import { Propiedades } from './pages/propiedades/propiedades';
 import { Alquileres } from './pages/alquileres/alquileres';
 import { DetallePropiedad } from './pages/detalle-propiedad/detalle-propiedad';
@@ -22,6 +23,7 @@ export const routes: Routes = [
   { path: 'dashboard-admin', component: DashboardAdmin },
   { path: 'contacto', component: Contacto },
   { path: 'propiedades', component: Propiedades},
+  { path: 'crear-propiedad', component: CrearPropiedad},
   { path: 'propiedad/:id', component: DetallePropiedad},
   { path: 'alquileres', component:Alquileres},
   { path: 'casas-venta', component: CasaVenta },

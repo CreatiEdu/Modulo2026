@@ -45,45 +45,60 @@
 
                 <div class="card shadow-sm-custom border-0 bg-light">
                     <div class="card-body p-4">
-
-                        <h3 class="text-primary mb-3">
-                            $ {{ propiedad.precio }}
-                        </h3>
-
-                        <hr>
-
-                        <h5 class="card-title mb-3">
-                            Contactar anunciante
-                        </h5>
-
-                        <input
-                            type="text"
-                            class="form-control mb-3"
-                            placeholder="Nombre">
-
-                        <input
-                            type="email"
-                            class="form-control mb-3"
-                            placeholder="Correo electrónico">
-
-                        <textarea
-                            class="form-control mb-3"
-                            rows="4"
-                            placeholder="Hola, me interesa esta propiedad."></textarea>
-
-                        <button
-                            class="btn btn-primary w-100 fw-bold">
-                            Enviar consulta
-                        </button>
-
                         
+                        @if (!authService.isLoggedIn()) {
+                            <h5>¿Te interesa esta propiedad?</h5>
+                            <p>Iniciá sesión para realizar consultas.</p>
+                            
+                            
+                            <a
+                                routerLink="/login"
+                                class="btn btn-primary w-100">
+                                Iniciar sesión
+                            </a>
+                        }
+                        
+                        @if (authService.isLoggedIn() &&
+                            authService.getRole() === 'cliente') {
+                            
+                            <h3 class="text-primary mb-3">
+                            $ {{ propiedad.precio }}
+                            </h3>
+                            <hr>
+                            <h5 class="card-title mb-3">
+                                Contactar anunciante
+                            </h5>
+
+                            <input
+                                type="text"
+                                class="form-control mb-3"
+                                placeholder="Nombre">
+
+                            <input
+                                type="email"
+                                class="form-control mb-3"
+                                placeholder="Correo electrónico">
+
+                            <textarea
+                                class="form-control mb-3"
+                                rows="4"
+                                placeholder="Hola, me interesa esta propiedad."></textarea>
+
+                            <button
+                                class="btn btn-primary w-100 fw-bold">
+                                Enviar consulta
+                            </button>
+                        }
+                        @if (authService.isLoggedIn() &&
+                            authService.getRole() === 'admin') {
+                            <h5>Métricas de la publicación</h5>
+                            <hr><p>Visualizaciones:<strong>245</strong></p>
+                            <p>Favoritos:<strong>31</strong></p>
+                            <p>Consultas:<strong>12</strong></p>
+                        }
                     </div>
                 </div>
-
             </div>
-
         </div>
-
     }
-
 </div>
