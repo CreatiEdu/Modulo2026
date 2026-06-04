@@ -14,14 +14,14 @@ export class AuthService {
 
   login(data: any) {
     return this.http.post(
-      `${this.apiUrl}/login/`,
+      'http://127.0.0.1:8000/api/login/',
       data
     );
   }
 
   register(data: any) {
     return this.http.post(
-      `${this.apiUrl}/register/`,
+      'http://127.0.0.1:8000/api/register/',
       data
     );
   }
@@ -40,7 +40,17 @@ export class AuthService {
   }
 
   getRole() {
-    return this.getUser().rol;
+    const rolBackend = this.getUser().rol;
+    if (rolBackend === 1 || rolBackend === '1') {
+      return 'cliente';
+    }
+    if (rolBackend === 2 || rolBackend === '2') {
+      return 'gestor'; 
+    }
+    if (rolBackend === 3 || rolBackend === '3') {
+      return 'admin';
+    }
+    return '';
   }
 
   isLoggedIn() {

@@ -8,6 +8,7 @@ from .models import Usuario
 def register(request):
 
     nombre = request.data.get('nombre')
+    dni = request.data.get('dni')
     email = request.data.get('email')
     password = request.data.get('password')
 
@@ -19,16 +20,16 @@ def register(request):
 
     Usuario.objects.create(
         nombre=nombre,
+        dni=dni,
         email=email,
         password=password,
-        rol='cliente'
+        rol='1'
     )
 
     return Response(
         {'mensaje': 'Usuario registrado correctamente'},
         status=status.HTTP_201_CREATED
     )
-
 
 @api_view(['POST'])
 def login(request):

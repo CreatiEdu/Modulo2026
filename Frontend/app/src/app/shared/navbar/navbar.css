@@ -1,0 +1,48 @@
+/* Navbar */
+.navbar {
+  padding: 10px 20px;
+}
+
+/* Logo responsive */
+.logo-nav {
+  width: clamp(55px, 7vw, 90px);
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto suave */
+.logo-nav:hover {
+  transform: scale(1.05);
+}
+
+/* Ajuste del brand */
+.navbar-brand {
+  padding: 0;
+  margin-right: 20px;
+}
+
+/* Links del menú */
+.nav-link {
+  font-size: 1rem;
+}
+
+/* Responsive celular */
+@media (max-width: 768px) {
+  .logo-nav {
+    width: 60px;
+  }
+
+  .navbar {
+    padding: 8px 15px;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

@@ -1,20 +1,12 @@
 -- Active: 1780184813602@@inmosmart.duckdns.org@3306@inmosmart
-CREATE TABLE `Gestor` (
-    `id_Gestor` integer PRIMARY KEY,
-    `nombre` varchar(255),
-    `email` varchar(255) UNIQUE,
-    `password` varchar(255),
-    `telefono` varchar(255),
-    `id_rol` integer
-);
-
-CREATE TABLE `Clientes` (
+CREATE TABLE `Usuarios` (
     `id_usuario` integer PRIMARY KEY,
     `nombre` varchar(255),
     `email` varchar(255) UNIQUE,
     `password` varchar(255),
+    `telefono` varchar(255),
     `dni` varchar(255) UNIQUE,
-    `telefono` varchar(255)
+    `id_rol` integer
 );
 
 CREATE TABLE `Contacto` (
@@ -43,7 +35,8 @@ CREATE TABLE `Propiedad` (
     `acepta_mascotas` boolean,
     `id_tipo` integer,
     `id_estado` integer,
-    `id_gestor` integer
+    `id_gestor` integer,
+    `fecha_creacion` date
 );
 
 CREATE TABLE `TipoPropiedad` (
@@ -72,15 +65,11 @@ CREATE TABLE `Favoritos` (
     `id_usuario` integer
 );
 
-ALTER TABLE `Gestor` COMMENT = 'Centraliza a dueños, agentes e interesados';
-
-ALTER TABLE `Clientes` COMMENT = 'Centraliza a dueños, agentes e interesados';
-
-ALTER TABLE `Gestor`
+ALTER TABLE `Usuarios`
 ADD CONSTRAINT `Tiene_Rol` FOREIGN KEY (`id_rol`) REFERENCES `Roles` (`id_rol`);
 
 ALTER TABLE `Propiedad`
-ADD CONSTRAINT `Gestiona` FOREIGN KEY (`id_gestor`) REFERENCES `Gestor` (`id_Gestor`);
+ADD CONSTRAINT `Gestiona` FOREIGN KEY (`id_gestor`) REFERENCES `Usuarios` (`id_usuario`);
 
 ALTER TABLE `Propiedad`
 ADD CONSTRAINT `Es_Tipo` FOREIGN KEY (`id_tipo`) REFERENCES `TipoPropiedad` (`id_tipo`);
@@ -92,10 +81,10 @@ ALTER TABLE `Contractos`
 ADD CONSTRAINT `Tiene_Propiedad` FOREIGN KEY (`id_propiedad`) REFERENCES `Propiedad` (`id_propiedad`);
 
 ALTER TABLE `Contractos`
-ADD CONSTRAINT `Puede_ver` FOREIGN KEY (`id_inquilino_comprador`) REFERENCES `Clientes` (`id_usuario`);
+ADD CONSTRAINT `Puede_ver` FOREIGN KEY (`id_inquilino_comprador`) REFERENCES `Usuarios` (`id_usuario`);
 
 ALTER TABLE `Favoritos`
-ADD CONSTRAINT `Marca` FOREIGN KEY (`id_usuario`) REFERENCES `Clientes` (`id_usuario`);
+ADD CONSTRAINT `Marca` FOREIGN KEY (`id_usuario`) REFERENCES `Usuarios` (`id_usuario`);
 
 ALTER TABLE `Favoritos`
 ADD CONSTRAINT `Es_marcada` FOREIGN KEY (`id_propiedad`) REFERENCES `Propiedad` (`id_propiedad`);

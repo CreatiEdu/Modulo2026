@@ -5,7 +5,6 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-dashboard-admin',
   standalone: true,
-  imports: [CommonModule, RouterLink],
   templateUrl: './dashboard-admin.html',
   styleUrl: './dashboard-admin.css'
 })
