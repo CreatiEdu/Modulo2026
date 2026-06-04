@@ -16,5 +16,8 @@ class Usuario(models.Model):
     telefono = models.CharField(max_length=50, blank=True, null=True)
     rol = models.IntegerField(choices=ROLES, default=1)
 
+    class Meta:
+        db_table = "usuario"
+
     def __str__(self):
-        return f'{self.nombre} ({self.get_rol_display()})'
+        return self.nombre
