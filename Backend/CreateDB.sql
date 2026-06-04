@@ -35,7 +35,8 @@ CREATE TABLE `Propiedad` (
     `acepta_mascotas` boolean,
     `id_tipo` integer,
     `id_estado` integer,
-    `id_gestor` integer
+    `id_gestor` integer,
+    `fecha_creacion` date
 );
 
 CREATE TABLE `TipoPropiedad` (
