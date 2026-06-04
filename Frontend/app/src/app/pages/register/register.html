@@ -24,6 +24,26 @@
       </div>
 
       <div class="campo">
+        <label for="dni">DNI</label>
+        <input
+          id="dni"
+          type="text"
+          formControlName="dni"
+          placeholder="12345678A"
+          maxlength="9"
+          [class.input-error]="dni?.invalid && dni?.touched"
+          />
+          @if (dni?.invalid && dni?.touched) {
+            @if (dni?.errors?.['required']) {
+              <span class="error">El DNI es obligatorio</span>
+            }
+            @if (dni?.errors?.['maxlength']) {
+              <span class="error">El DNI no puede superar los 9 caracteres</span>
+            }
+          }
+      </div>
+
+      <div class="campo">
         <label for="email">Email</label>
         <input
           id="email"
