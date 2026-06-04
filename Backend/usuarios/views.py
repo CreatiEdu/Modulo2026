@@ -28,9 +28,7 @@ def register(request):
         {'mensaje': 'Usuario registrado correctamente'},
         status=status.HTTP_201_CREATED
     )
-
-
-@api_view(['POST'])
+    
 def login(request):
 
     email = request.data.get('email')
