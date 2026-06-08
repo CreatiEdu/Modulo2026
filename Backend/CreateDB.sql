@@ -10,9 +10,9 @@ CREATE TABLE `Usuarios` (
 );
 
 CREATE TABLE `Contacto` (
-    `id_contacto` integer PRIMARY KEY,
+    `id_contacto` integer AUTO_INCREMENT PRIMARY KEY,
     `nombre` varchar(255),
-    `email` varchar(255) UNIQUE,
+    `email` varchar(255),
     `telefono` varchar(255),
     `asunto` varchar(100),
     `mensaje` text,
