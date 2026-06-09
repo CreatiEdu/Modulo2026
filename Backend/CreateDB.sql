@@ -36,7 +36,10 @@ CREATE TABLE `Propiedad` (
     `id_tipo` integer,
     `id_estado` integer,
     `id_gestor` integer,
-    `fecha_creacion` date
+    `fecha_creacion` date,
+    `imagen_1` MEDIUMBLOB,
+    `imagen_2` MEDIUMBLOB,
+    `imagen_3` MEDIUMBLOB
 );
 
 CREATE TABLE `TipoPropiedad` (
