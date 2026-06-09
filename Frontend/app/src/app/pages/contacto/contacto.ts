@@ -14,7 +14,6 @@ import { Router } from '@angular/router';
   templateUrl: './contacto.html',
   styleUrls: ['./contacto.css']
 })
-
 export class Contacto {
 
   formulario = {
@@ -31,31 +30,25 @@ export class Contacto {
   ) {}
 
   enviarFormulario() {
-
     this.http.post(
       'http://127.0.0.1:8000/api/contacto/',
       this.formulario
-
     ).subscribe({
-
       next: (respuesta) => {
-
         console.log('Consulta enviada', respuesta);
-
-        this.router.navigate(['/contacto-exito']);
-
+        alert('Consulta enviada con éxito');
+        this.formulario = {
+          nombre: '',
+          telefono: '',
+          email: '',
+          asunto: '',
+          mensaje: ''
+        };
       },
-
       error: (error) => {
-
         console.error('Error al enviar', error);
-
         alert('Ocurrió un error al enviar la consulta');
-
       }
-
     });
-
   }
-
 }

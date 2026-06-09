@@ -25,7 +25,7 @@ class Propiedad(models.Model):
     imagen_3 = models.ImageField(upload_to='propiedades/', null=True, blank=True, verbose_name="Imagen Interior 2")
     
 
-    fecha_creacion = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de publicación")
+    fecha_creacion = models.DateField(auto_now_add=True, verbose_name="Fecha de publicación")
 
     class Meta:
         db_table = "propiedad"

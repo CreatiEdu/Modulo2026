@@ -67,7 +67,8 @@ export class Register {
         },
         error: (error) => {
           console.error(error);
-          alert('Error al registrar usuario');
+          const msg = error?.error?.error || error?.message || 'Error al registrar usuario';
+          alert(msg);
         }
       });
   }

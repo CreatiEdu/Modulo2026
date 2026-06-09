@@ -102,6 +102,14 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:4200",  # <-- Agregada por seguridad
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'usuarios.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ],
+}
+
 # =========================================================================
 # NUEVA CONFIGURACIÓN PARA IMÁGENES SUBIDAS POR EL USUARIO
 # =========================================================================

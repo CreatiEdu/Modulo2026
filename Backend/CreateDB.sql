@@ -25,7 +25,7 @@ CREATE TABLE `Roles` (
 );
 
 CREATE TABLE `Propiedad` (
-    `id_propiedad` integer PRIMARY KEY,
+    `id_propiedad` integer PRIMARY KEY AUTO_INCREMENT,
     `titulo` varchar(255),
     `descripcion` text,
     `precio` decimal,

@@ -21,17 +21,26 @@ export class DetallePropiedad {
     public authService: AuthService,
   ) {
     
-    const id =Number (
+    const id = Number(
       this.route.snapshot.paramMap.get('id')
     );
     
-    this.propiedad = 
-      this.PropiiedadesService.obtenerPorId(id);
+    this.propiedad = this.PropiiedadesService.obtenerPorId(id);
 
-    if(this.propiedad){
-
-      this.imagenActual =
-        this.propiedad.imagenes[0];
-      }
+    if (this.propiedad) {
+      this.imagenActual = this.propiedad.imagenes[0];
+    } else {
+      this.PropiiedadesService.obtenerPorIdAsync(id).subscribe({
+        next: (p) => {
+          this.propiedad = p;
+          if (p) {
+            this.imagenActual = p.imagenes[0];
+          }
+        },
+        error: (err) => {
+          console.error('Error fetching property details', err);
+        }
+      });
+    }
   }
 }
