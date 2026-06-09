@@ -13,6 +13,7 @@ import { DashboardAdmin } from './pages/dashboard-admin/dashboard-admin';
 import { Pagina404 } from '../pages/pagina404/pagina404';
 import { CasaVenta } from './pages/casa-venta/casa-venta';
 import { TerrenosLotes } from './pages/terrenos-lotes/terrenos-lotes';
+import { ContactoExito } from './pages/contacto-exito/contacto-exito';
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -30,7 +31,8 @@ export const routes: Routes = [
   { path: 'terrenos-lotes', component: TerrenosLotes },
 
   // agregado de rutas
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+ 
+  { path: 'contacto-exito', component: ContactoExito },
   { path: '**', component: Pagina404 }
 ];
 
