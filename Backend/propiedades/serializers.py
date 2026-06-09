@@ -4,5 +4,5 @@ from .models import Propiedad
 class PropiedadSerializer(serializers.ModelSerializer):
     class Meta:
         model = Propiedad
-        fields = ['titulo','descripcion','precio','habitaciones','baños','superficie','acepta_mascotas','id_tipo','id_estado','id_Gestor']
+        fields = ['titulo','descripcion','precio','habitaciones','baños','superficie','acepta_mascotas','id_tipo','id_estado','id_Gestor', 'imagen1', 'imagen2', 'imagen3']
         read_only_fields = ['id_propiedad','fecha_creacion']
