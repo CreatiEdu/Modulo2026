@@ -14,7 +14,15 @@ class Usuario(models.Model):
     password = models.CharField(max_length=100)
     dni= models.CharField(max_length=9,unique=True)
     telefono = models.CharField(max_length=50, blank=True, null=True)
-    rol = models.IntegerField(choices=ROLES, default=1)
+    rol = models.IntegerField(choices=ROLES, default=1, db_column='id_rol')
+
+    @property
+    def is_authenticated(self):
+        return True
+
+    @property
+    def is_anonymous(self):
+        return False
 
     class Meta:
         db_table = "usuario"

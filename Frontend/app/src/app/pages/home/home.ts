@@ -8,4 +8,11 @@ import { RouterLink } from '@angular/router';
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home {}
+
+export class Home {
+  
+  
+  registrarVisita() {
+    console.log('El botón funciona y la visita fue registrada');
+  }
+}

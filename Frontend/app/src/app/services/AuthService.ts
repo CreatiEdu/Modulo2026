@@ -6,24 +6,33 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
 
-  private apiUrl = 'http://localhost:8000/api/users';
+  // Base API URL for authentication endpoints
+  private authBaseUrl = 'http://localhost:8000/api';
 
   constructor(
     private http: HttpClient
   ) {}
 
   login(data: any) {
+    // Use the base API URL to send login credentials and receive a JWT token
     return this.http.post(
-      'http://127.0.0.1:8000/api/login/',
+      `${this.authBaseUrl}/login/`,
       data
     );
   }
 
   register(data: any) {
+    // Register a new user through the backend
     return this.http.post(
-      'http://127.0.0.1:8000/api/register/',
+      `${this.authBaseUrl}/register/`,
       data
     );
+  }
+
+  /** Retrieve the stored JWT token */
+  getToken(): string | null {
+    const user = this.getUser();
+    return user && user.token ? user.token : null;
   }
 
   saveUser(user: any) {

@@ -2,6 +2,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from .models import Usuario
+from .utils import generate_jwt_token
 
 
 @api_view(['POST'])
@@ -18,13 +19,18 @@ def register(request):
             status=status.HTTP_400_BAD_REQUEST
         )
 
-    Usuario.objects.create(
-        nombre=nombre,
-        dni=dni,
-        email=email,
-        password=password,
-        rol='1'
-    )
+    try:
+        Usuario.objects.create(
+            nombre=nombre,
+            dni=dni,
+            email=email,
+            password=password,
+            rol=1
+        )
+    except Exception as e:
+        return Response({
+            'error': str(e)
+        }, status=status.HTTP_400_BAD_REQUEST)
 
     return Response(
         {'mensaje': 'Usuario registrado correctamente'},
@@ -43,7 +49,10 @@ def login(request):
             password=password
         )
 
+        token = generate_jwt_token(usuario)
+
         return Response({
+            'token': token,
             'id': usuario.id_usuario,
             'nombre': usuario.nombre,
             'email': usuario.email,

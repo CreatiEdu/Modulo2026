@@ -117,7 +117,7 @@ VALUES (
 INSERT INTO
     `Propiedad`
 VALUES (
-        1,
+        Null,
         'Casa en barrio Alberdi',
         'Casa con jardin, cochera y parrilla. Tres dormitorios. Buen estado general.',
         85000.00,
@@ -133,7 +133,7 @@ VALUES (
 INSERT INTO
     `Propiedad`
 VALUES (
-        2,
+        Null,
         'Depto en el centro',
         'Piso 3 con balcon. Dos ambientes. A metros de la peatonal Sobremonte. Apto banco.',
         210000.00,
@@ -149,7 +149,7 @@ VALUES (
 INSERT INTO
     `Propiedad`
 VALUES (
-        3,
+        Null,
         'Casa barrio Banda Norte',
         '4 dormitorios, 2 baños, cochera. Zona tranquila cerca del rio.',
         76000.00,
@@ -165,7 +165,7 @@ VALUES (
 INSERT INTO
     `Propiedad`
 VALUES (
-        4,
+        Null,
         'Monoambiente amoblado zona UNRC',
         'Todo incluido, wifi y expensas. Ideal estudiantes. Disponible desde marzo.',
         130000.00,
@@ -181,7 +181,7 @@ VALUES (
 INSERT INTO
     `Propiedad`
 VALUES (
-        5,
+        Null,
         'Local comercial Av Hipólito Yrigoyen',
         'Local a la calle con vidriera, deposito y baño. Mucho paso comercial.',
         320000.00,
@@ -197,7 +197,7 @@ VALUES (
 INSERT INTO
     `Propiedad`
 VALUES (
-        6,
+        Null,
         'Terreno en Las Higueras',
         'Lote 500m2 a 10km de Rio Cuarto. Todos los servicios. Escritura lista.',
         18000.00,
@@ -213,7 +213,7 @@ VALUES (
 INSERT INTO
     `Propiedad`
 VALUES (
-        7,
+        Null,
         'Casa en barrio jardín',
         'Tres dorm, pileta, quincho y garage doble. Barrio privado con seguridad.',
         175000.00,

@@ -10,13 +10,13 @@ CREATE TABLE `Usuarios` (
 );
 
 CREATE TABLE `Contacto` (
-    `id_contacto` integer PRIMARY KEY,
+    `id_contacto` integer AUTO_INCREMENT PRIMARY KEY,
     `nombre` varchar(255),
-    `email` varchar(255) UNIQUE,
+    `email` varchar(255),
     `telefono` varchar(255),
     `asunto` varchar(100),
     `mensaje` text,
-    `fecha_envio` date
+    `fecha_envio` datetime
 );
 
 CREATE TABLE `Roles` (
@@ -25,7 +25,7 @@ CREATE TABLE `Roles` (
 );
 
 CREATE TABLE `Propiedad` (
-    `id_propiedad` integer PRIMARY KEY,
+    `id_propiedad` integer PRIMARY KEY AUTO_INCREMENT,
     `titulo` varchar(255),
     `descripcion` text,
     `precio` decimal,
@@ -36,7 +36,10 @@ CREATE TABLE `Propiedad` (
     `id_tipo` integer,
     `id_estado` integer,
     `id_gestor` integer,
-    `fecha_creacion` date
+    `fecha_creacion` date,
+    `imagen_1` MEDIUMBLOB,
+    `imagen_2` MEDIUMBLOB,
+    `imagen_3` MEDIUMBLOB
 );
 
 CREATE TABLE `TipoPropiedad` (
