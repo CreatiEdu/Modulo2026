@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 class Contacto(models.Model):
     
@@ -7,7 +8,7 @@ class Contacto(models.Model):
     email = models.EmailField(verbose_name="Correo Electronico")
     telefono = models.CharField(max_length=20, blank=True, null=True, verbose_name="Numero Telefonico")
     mensaje = models.TextField(verbose_name="Mensaje")
-    fecha_envio = models.DateTimeField(auto_now_add=True)
+    fecha_envio = models.DateTimeField(default=timezone.now, verbose_name="Fecha de Envio")
     asunto= models.CharField(max_length=100, verbose_name="Asunto")
     class Meta:  db_table = "contacto"
 
