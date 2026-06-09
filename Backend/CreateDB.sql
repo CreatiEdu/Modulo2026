@@ -16,7 +16,7 @@ CREATE TABLE `Contacto` (
     `telefono` varchar(255),
     `asunto` varchar(100),
     `mensaje` text,
-    `fecha_envio` date
+    `fecha_envio` datetime
 );
 
 CREATE TABLE `Roles` (
