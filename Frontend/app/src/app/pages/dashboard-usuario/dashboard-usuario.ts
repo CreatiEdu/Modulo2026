@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { AuthService } from '../../services/AuthService';
 
 @Component({
   selector: 'app-dashboard-usuario',
@@ -9,13 +10,27 @@ import { RouterLink } from '@angular/router';
   templateUrl: './dashboard-usuario.html',
   styleUrl: './dashboard-usuario.css'
 })
-export class DashboardUsuario {
+export class DashboardUsuario implements OnInit {
 
   usuario = {
-    nombre: 'Juan Pérez',
-    email: 'juan@email.com'
+    nombre: '',
+    email: ''
   };
 
+  constructor(private authService: AuthService) {}
+
+  ngOnInit() {
+    const userStorage = JSON.parse(localStorage.getItem('user') || '{}'); 
+
+    if (userStorage && userStorage.nombre) {
+      this.usuario.nombre = userStorage.nombre;
+      this.usuario.email = userStorage.email;
+    } else {
+      this.usuario.nombre = 'Invitado';
+      this.usuario.email = '';
+    }
+  }
+  
   favoritos = [
     { id: 1, titulo: 'Casa en venta', ubicacion: 'Córdoba Centro', precio: '$120.000 USD' },
     { id: 2, titulo: 'Departamento en alquiler', ubicacion: 'Nueva Córdoba', precio: '$350.000 ARS' },
